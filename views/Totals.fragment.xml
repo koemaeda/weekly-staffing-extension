@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Panel headerText="Weekly Staffing - {zStaffingExt>/dateString}" expandable="true" expanded="true" class="sapUiSmallMarginBottom">
+        <MessageStrip visible="{zStaffingExt>/warningVisible}" type="Warning" showIcon="true"
+            text="Select a Monday as the start date on the Weekly view to see your weekly staffing." />
+
+        <Table visible="{zStaffingExt>/totalsVisible}" items="{zStaffingExt>/totals}">
+            <columns>
+                <Column><Text text="Project" /></Column>
+                <Column><Text text="Task" /></Column>
+                <Column><Text text="Status" /></Column>
+                <Column><Text text="Hours" /></Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <Text text="{zStaffingExt>projectName}" />
+                    <Text text="{zStaffingExt>title}" />
+                    <Text text="{zStaffingExt>assignmentStatus}" />
+                    <Text text="{zStaffingExt>staffedHours}" />
+                </ColumnListItem>
+            </items>
+        </Table>
+    </Panel>
+</core:FragmentDefinition>

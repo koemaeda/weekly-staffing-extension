@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "My Assignments - Weekly Staffing",
+    "version": "0.1",
+    "description": "See weekly staffing assignments in the SAP My Assignments app (F5991).",
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/injectExtension.js"
+            ],
+            "matches": [
+                "https://*.resourcemanagement.cloud.sap/*"
+            ]
+        }
+    ],
+    "permissions": [
+        "scripting"
+    ],
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "https://*.resourcemanagement.cloud.sap/*"
+            ],
+            "resources": [
+                "/scripts/*.js",
+                "/views/*.xml"
+            ]
+        }
+    ]
+}
