@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table">
+    <Panel busy="{zStaffingExt>/busy}" expandable="true" expanded="true" class="sapUiSmallMarginTop">
+        <headerToolbar>
+            <OverflowToolbar>
+                <Title text="Weekly Staffing" />
+                <ToolbarSpacer />
+                <Button icon="sap-icon://excel-attachment" press=".extWeeklyStaffing.downloadSpreadsheet" tooltip="Download spreadsheet" />
+            </OverflowToolbar>
+        </headerToolbar>
+        <content>
+            <table:Table id="zStaffing_Table" rows="{zStaffingExt>/rows}" selectionMode="None" visibleRowCountMode="Interactive" enableColumnFreeze="true">
+                <!-- Dynamic column binding -->
+            </table:Table>
+        </content>
+    </Panel>
+</core:FragmentDefinition>

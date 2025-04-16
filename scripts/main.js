@@ -25,13 +25,6 @@
             this.extWeeklyStaffing = new PageExtension(this);
         }
 
-        const originalOnExit = PageController.prototype.onExit;
-        PageController.prototype.onExit = function() {
-            if (originalOnExit)
-                originalOnExit.apply(this, arguments);
-            this.extWeeklyStaffing.cleanup();
-        }
-
         // initialize first/current controller instance
         const viewInstance = sap.ui.getCore().byId("application-myAssignmentsUi-Display-component---Page");
         if (viewInstance) {
