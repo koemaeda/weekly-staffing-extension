@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128"
+   height="128"
+   viewBox="0 0 33.866667 33.866667"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="weekly-staffing-icon.svg"
+   inkscape:export-filename="icon-128.png"
+   inkscape:export-xdpi="12"
+   inkscape:export-ydpi="12"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="2.8471661"
+     inkscape:cx="49.347314"
+     inkscape:cy="27.922502"
+     inkscape:window-width="1920"
+     inkscape:window-height="1008"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient18"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#7dbce8;stop-opacity:1;"
+         offset="0.00000002"
+         id="stop18" />
+      <stop
+         style="stop-color:#7dbce8;stop-opacity:0;"
+         offset="0.74911845"
+         id="stop19" />
+    </linearGradient>
+    <rect
+       x="26.325587"
+       y="16.143049"
+       width="92.139554"
+       height="92.387909"
+       id="rect5" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath10">
+      <rect
+         style="fill:#000000;fill-opacity:0.8;stroke:#000000;stroke-width:0;stroke-opacity:0.483904"
+         id="rect10"
+         width="5.8482347"
+         height="33.31522"
+         x="0.59139436"
+         y="0.59139436"
+         ry="0" />
+    </clipPath>
+    <rect
+       x="26.325587"
+       y="16.143049"
+       width="92.139554"
+       height="92.387909"
+       id="rect11" />
+    <rect
+       x="26.325587"
+       y="16.143049"
+       width="92.139554"
+       height="92.387909"
+       id="rect17" />
+    <rect
+       x="26.325587"
+       y="16.143049"
+       width="92.139554"
+       height="92.387909"
+       id="rect18" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient18"
+       id="linearGradient19"
+       x1="19.32457"
+       y1="8.5649433"
+       x2="19.32457"
+       y2="25.217215"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Bezel"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#97d1fa;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:0.483904"
+       id="rect1"
+       width="31.803875"
+       height="31.803875"
+       x="1.0513679"
+       y="1.0513679"
+       ry="4.2884011" />
+    <rect
+       style="fill:#1f72ad;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:0.483904"
+       id="rect2"
+       width="31.803875"
+       height="31.803875"
+       x="1.0513679"
+       y="1.0513679"
+       ry="4.2884011"
+       clip-path="url(#clipPath10)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Background"
+     style="display:inline">
+    <g
+       id="g10"
+       style="stroke:url(#linearGradient19);stroke-opacity:1">
+      <path
+         style="display:inline;fill:#97d1fa;fill-opacity:1;stroke:url(#linearGradient19);stroke-width:0.248104;stroke-dasharray:none;stroke-opacity:1"
+         d="M 11.122487,3.4861386 V 30.29602"
+         id="path6" />
+      <path
+         style="display:inline;fill:#97d1fa;fill-opacity:1;stroke:url(#linearGradient19);stroke-width:0.248104;stroke-dasharray:none;stroke-opacity:1"
+         d="M 16.590542,3.4861386 V 30.29602"
+         id="path8" />
+      <path
+         style="display:inline;fill:#97d1fa;fill-opacity:1;stroke:url(#linearGradient19);stroke-width:0.248104;stroke-dasharray:none;stroke-opacity:1"
+         d="M 22.058598,3.4861386 V 30.29602"
+         id="path9" />
+      <path
+         style="display:inline;fill:#97d1fa;fill-opacity:1;stroke:url(#linearGradient19);stroke-width:0.248104;stroke-dasharray:none;stroke-opacity:1"
+         d="M 27.526653,3.4861386 V 30.29602"
+         id="path10" />
+    </g>
+    <path
+       id="rect6"
+       style="display:inline;fill:#52a5e0;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:0.483904"
+       d="M 6.4423652,4.931769 H 25.892666 L 14.393331,17.416762 H 6.4423652 Z"
+       sodipodi:nodetypes="ccccc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Text (Large)"
+     style="display:inline;fill:#000000;fill-opacity:1"
+     transform="matrix(4.2401854,0,0,4.2401854,-22.129822,-15.330497)">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.43530098,0,0,0.43530098,-4.2616165,0.23295469)"
+       id="text4"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333px;font-family:Gidugu;-inkscape-font-specification:'Gidugu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect5);display:inline;fill:#0f3957;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:0.483904"><tspan
+         x="26.326172"
+         y="20.95739"
+         id="tspan2"><tspan
+           style="font-size:4.5871px"
+           id="tspan1">Weekly</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.39251481,0,0,0.39251481,-3.0526139,2.5627464)"
+       id="text11"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333px;font-family:Gidugu;-inkscape-font-specification:'Gidugu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect11);display:inline;fill:#0f3957;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:0.483904"><tspan
+         x="26.326172"
+         y="20.95739"
+         id="tspan4"><tspan
+           style="font-size:5.08712px"
+           id="tspan3">Staffing</tspan></tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g17"
+     inkscape:label="Text (Small)"
+     style="display:none;fill:#000000;fill-opacity:1"
+     transform="matrix(4.2401854,0,0,4.2401854,-22.129822,-15.330497)">
+    <text
+       xml:space="preserve"
+       transform="matrix(1.005887,0,0,1.005887,-19.256674,-10.253643)"
+       id="text16"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.33333px;font-family:Gidugu;-inkscape-font-specification:'Gidugu, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect17);display:inline;fill:#0f3957;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-opacity:0.483904"><tspan
+         x="26.326172"
+         y="20.95739"
+         id="tspan6"><tspan
+           style="font-size:4.5871px"
+           id="tspan5">WS</tspan></tspan></text>
+  </g>
+</svg>
