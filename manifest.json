@@ -19,9 +19,7 @@
             ]
         }
     ],
-    "permissions": [
-        "scripting"
-    ],
+    "permissions": [],
     "web_accessible_resources": [
         {
             "matches": [

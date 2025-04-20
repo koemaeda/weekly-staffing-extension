@@ -4,7 +4,7 @@
   "description": "Chrome extension: Weekly Staffing view for SAP My Assignments",
   "scripts": {
     "lint": "npx eslint scripts/**",
-    "zip": "npx bestzip extension.zip LICENSE manifest.json images scripts views"
+    "zip": "npx bestzip extension.zip LICENSE manifest.json images/icon* scripts views"
   },
   "repository": {
     "type": "git",
