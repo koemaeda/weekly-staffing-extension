@@ -1,0 +1,23 @@
+{
+  "name": "weekly-staffing-extension",
+  "version": "0.1.0",
+  "description": "Chrome extension: Weekly Staffing view for SAP My Assignments",
+  "scripts": {
+    "lint": "npx eslint scripts/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koemaeda/weekly-staffing-extension.git"
+  },
+  "author": "Guilherme Maeda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koemaeda/weekly-staffing-extension/issues"
+  },
+  "homepage": "https://github.com/koemaeda/weekly-staffing-extension#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "eslint": "^9.25.0",
+    "globals": "^16.0.0"
+  }
+}
