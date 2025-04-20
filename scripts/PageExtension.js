@@ -11,8 +11,8 @@ sap.ui.define([
     "sap/ui/table/Column",
     "sap/m/Label",
     "sap/m/Text",
-	"sap/ui/export/library",
-	"sap/ui/export/Spreadsheet",
+    "sap/ui/export/library",
+    "sap/ui/export/Spreadsheet"
 ], function (JSONModel, Filter, FilterOperator, Column, Label, Text, exportLibrary, Spreadsheet) {
 
     /**
