@@ -1,5 +1,12 @@
+/**
+ * This file is part of the Chrome extension: Weekly Staffing view for SAP My Assignments
+ * https://github.com/koemaeda/weekly-staffing-extension
+ * Copyright (c) 2025 Guilherme Maeda
+ */
+/* globals sap */
 (async function () {
 
+    // Register our extension as a namespace in the UI5 loader so our classes can be loaded with sap.ui.require
     // See: https://github.com/flovogt/ui5-external-library
     sap.ui.loader.config({
         paths: {

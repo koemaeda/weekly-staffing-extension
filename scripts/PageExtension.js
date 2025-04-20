@@ -1,3 +1,9 @@
+/**
+ * This file is part of the Chrome extension: Weekly Staffing view for SAP My Assignments
+ * https://github.com/koemaeda/weekly-staffing-extension
+ * Copyright (c) 2025 Guilherme Maeda
+ */
+/* globals sap */
 sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
@@ -9,8 +15,10 @@ sap.ui.define([
 	"sap/ui/export/Spreadsheet",
 ], function (JSONModel, Filter, FilterOperator, Column, Label, Text, exportLibrary, Spreadsheet) {
 
-    const EdmType = exportLibrary.EdmType;
-
+    /**
+     * Extension class for the standard app's "Page" controller.
+     * When instantiated, this class is added to the controller as property "extWeeklyStaffing".
+     */
     class PageExtension {
 
         constructor(controller) {
@@ -26,13 +34,16 @@ sap.ui.define([
             });
             this.controller.setModel(this.model, "zStaffingExt");
 
+            // Reuse standard app's own OData model, using bindings for reading project/assignments data
             this.odataModel = this.controller.getModel("oDataV4Model");
             this.assignmentsBinding = this.odataModel.bindList("/AssignmentDetails");
             this.requestsBinding = this.odataModel.bindList("/AssignmentRequestDetails");
             this.resourceBinding = this.odataModel.bindList("/ResourceDetails");
 
+            // We use the Calendar control as our main reference for selection parameters (date range)
             this.calendar = this.controller.byId("MyPlanningCalendar");
 
+            // Load and insert our custom UI panel under the Calendar
             const fragment = await this.controller.loadFragment({ name: "chrome-extension.weekly-staffing.views.WeeklyStaffing" });
             this.bindTableColumns();
             this.calendar.getParent().addItem(fragment);
@@ -42,12 +53,10 @@ sap.ui.define([
             this.refresh();
         }
 
+        /**
+         * Dynamically bind our table columns, as we need dynamic columns for the weeks.
+         */
         bindTableColumns() {
-            this.baseColumns = [
-                { label: "Project", propertyName: "projectName", width: "12rem" },
-                { label: "Task", propertyName: "projectName", width: "12rem" },
-                { label: "Status", propertyName: "assignmentStatus", width: "8rem" }
-            ];
             this.controller.byId("zStaffing_Table").bindColumns({
                 model: "zStaffingExt",
                 path: "/columns",
@@ -65,6 +74,9 @@ sap.ui.define([
             });
         }
 
+        /**
+         * Refresh data displayed in our table whenever the Calendar selection changes, i.e. date range or week/month view
+         */
         async refresh() {
             this.model.setProperty("/busy", true);
             const weeks = this.getWeeks();
@@ -95,6 +107,9 @@ sap.ui.define([
             this.model.setProperty("/busy", false);
         }
 
+        /**
+         * Update the /columns model property with one column for each week (Monday) in the current date range.
+         */
         updateTableColumns() {
             const weeks = this.getWeeks();
             let columns = [
@@ -114,6 +129,9 @@ sap.ui.define([
             this.model.setProperty("/columns", columns);
         }
 
+        /**
+         * Update the /rows model property with aggregated staffed hours per week (column) for each project (row).
+         */
         async updateTableRows() {
             const weekColumns = this.model.getProperty("/columns").filter(col => col.startDate);
             let rows = this.requests;
@@ -123,7 +141,7 @@ sap.ui.define([
                         const assignmentDate = _dateFromString(assignment.assignmentStartDate);
                         for (const column of weekColumns) {
                             if (assignmentDate >= _dateFromString(column.startDate) && assignmentDate <= _dateFromString(column.endDate)) {
-                                const assignedHours = parseFloat(assignment.AssignedHours)
+                                const assignedHours = parseFloat(assignment.AssignedHours);
                                 row[column.propertyName] = (row[column.propertyName] || 0.0) + assignedHours;
                                 row.totalStaffed = (row.totalStaffed || 0) + assignedHours;
                             }
@@ -132,11 +150,14 @@ sap.ui.define([
                 }
             }
             rows = rows
-                .filter(row => row.totalStaffed > 0)
+                .filter(row => row.totalStaffed > 0) // remove empty rows
                 .sort((a, b) => a.projectName.localeCompare(b.projectName));
             this.model.setProperty("/rows", rows);
         }
 
+        /**
+         * Update the OData binding for entity set ResourceDetails and return matching records.
+         */
         async readResourceDetails(startDate, endDate) {
             this.resourceBinding.filter(new Filter({ and: true, filters: [
                 new Filter("capacityDate", FilterOperator.GE, startDate),
@@ -145,6 +166,9 @@ sap.ui.define([
             return (await this.resourceBinding.requestContexts(0, 9999)).map(e => e.getObject());
         }
 
+        /**
+         * Update the OData binding for entity set AssignmentDetails and return matching records.
+         */
         async readAssignmentDetails(startDate, endDate) {
             this.assignmentsBinding.filter(new Filter({ and: true, filters: [
                 new Filter("assignmentStartDate", FilterOperator.GE, startDate),
@@ -153,10 +177,19 @@ sap.ui.define([
             return (await this.assignmentsBinding.requestContexts(0, 9999)).map(e => e.getObject());
         }
 
+        /**
+         * Update the OData binding for entity set AssignmentRequestDetails and return matching records.
+         */
         async readAssignmentRequestDetails() {
+            // we cannot filter this entity set as the assignment requests can span a larger period than our date range
+            // (the standard Fiori app also doesn't filter this entity set for the same reason)
             return (await this.requestsBinding.requestContexts(0, 9999)).map(e => e.getObject());
         }
 
+        /**
+         * Calculate the weeks that fall inside the Calendar's current date range.
+         * Returns an array with one entry per week with its corresponding start (Monday) and end (Sunday) dates.
+         */
         getWeeks() {
             let firstMonday = _dateToString(this.calendar.getStartDate());
             while (_dateFromString(firstMonday).getDay() !== 1) {
@@ -178,6 +211,9 @@ sap.ui.define([
             return weeks;
         }
 
+        /**
+         * Generate and download an Excel spreadsheet with the current table data.
+         */
         async downloadSpreadsheet() {
             if (this.extWeeklyStaffing) // called from Controller context
                 return this.extWeeklyStaffing.downloadSpreadsheet();
@@ -187,7 +223,7 @@ sap.ui.define([
                 property: column.propertyName,
                 width: column.width,
                 wrap: true,
-                type: column.startDate ? EdmType.Number : EdmType.String,
+                type: column.startDate ? exportLibrary.EdmType.Number : exportLibrary.EdmType.String,
                 scale: column.startDate ? 0 : undefined
             }));
             const sheet = new Spreadsheet({
@@ -204,7 +240,10 @@ sap.ui.define([
 
     }
 
-    // conversions for local ISO8601 dates, e.g. 2025-04-21
+    //
+    // Conversion functions for local ISO-8601 dates, e.g. 2025-04-21
+    //
+
     function _dateToString(date) {
         return date.toISOString().split("T")[0];
     }
