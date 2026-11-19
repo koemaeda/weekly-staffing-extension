@@ -33,7 +33,7 @@
         }
 
         // initialize first/current controller instance
-        const viewInstance = sap.ui.getCore().byId("application-myAssignmentsUi-Display-component---Page");
+        const viewInstance = sap.ui.getCore().byId("myAssignmentsUi::page");
         if (viewInstance) {
             const controller = viewInstance.getController();
             controller.extWeeklyStaffing = new PageExtension(controller);

@@ -1,6 +1,6 @@
 {
   "name": "weekly-staffing-extension",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Chrome extension: Weekly Staffing view for SAP My Assignments",
   "scripts": {
     "lint": "npx eslint scripts/**",

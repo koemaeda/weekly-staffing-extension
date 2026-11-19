@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Weekly Staffing view for SAP My Assignments",
-    "version": "0.1",
+    "version": "0.2",
     "description": "Visualize and export assignments aggregated per week in the SAP My Assignments app (F5991).",
     "icons": {
         "16": "images/icon-16.png",
